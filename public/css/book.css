@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps&display=swap');
+
+body {
+    background-image: url('../image/background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    padding-top: 4em;
+    font-size: 26pt;
+    font-family: 'Bilbo Swash Caps', cursive;
+}
+
+.whisky, .empty-whisky, .inkpen, .page {
+    filter: drop-shadow(15px 15px 5px var(--shadow));
+}
+
+.pages {
+    display: flex;
+    width: auto;
+    flex-basis : 65%;
+    margin:1em;
+}
+
+.page {
+    height:65vh;
+    padding: 3vw;
+    width: 50%;
+    background-blend-mode: multiply;
+}
+
+.leftpage {
+    background: url('../image/paper.png'), linear-gradient(270deg, rgba(157,158,137,1) 0%, rgba(233,226,187,1) 5%, rgba(255,251,203,1) 18%);
+    border-radius: 24px 40% 40% 24px/8px 8px 8px 8px;
+}
+
+.rightpage {
+    background: url('../image/paper.png'), linear-gradient(90deg, rgba(157,158,137,1) 0%, rgba(233,226,187,1) 5%, rgba(255,251,203,1) 18%);
+    border-radius:  40% 24px 24px 40%/8px 8px 8px 8px;
+    overflow: auto;
+}
+
+.empty-whisky{
+    display: none;
+}
+
+.desktop{
+    display:flex;
+    justify-content: center;
+    /*border:2px solid red;*/
+}
+
+.bloc-glass{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*border:2px solid red;*/
+}
+
+.bloc-inkpen{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /*border:2px solid red;*/
+}
+
+
+.bloc{
+    /*border:3px solid deepskyblue;*/
+    flex:3;
+}
+
+.inkpen{
+    /*border:3px solid deepskyblue;*/
+    flex:3;
+}
+
+label, input{
+    display:block;
+}
+
+label{
+    margin-top: 15px;
+}
+
+.alert
+{
+    font-size: .5em;
+}
+
+
+.red
+{
+color:red;
+}
+
+.green
+{
+color:forestgreen;
+}
+
+
+.index-container{
+    display:flex;
+    justify-content: space-between;
+    background-color: #d4d1ca;
+    background-image: url("https://www.transparenttextures.com/patterns/diagonal-noise.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    height:60px;
+}
+
+a{
+    color: #3f3b3a;
+    font-family: system-ui;
+    font-size: .8em;
+    margin: auto;
+    font-weight: 200;
+    text-decoration: none;
+}
+
+hr{
+    border-color : #3f3b3a;
+}
+
+
+table {
+    border-collapse: collapse;
+}
+
+tfoot{
+    border-top:solid 1px #3f3b3a;
+}
+
+h2{
+    margin:0;
+    text-align: center;
+    color: #3f3b3a;
+    font-family: system-ui;
+    font-size: .8em;
+}
+
+
+@media screen and (min-width: 1100px) and (max-width: 1200px) {
+    .bloc-inkpen {
+        display:none;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1100px) {
+    .empty-whisky{
+        display: block;
+    }
+
+    .whisky{
+        display:none;
+    }
+
+    .bloc-inkpen {
+        display:none;
+    }
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+    .bloc-glass{
+        display: none;
+        flex:0;
+    }
+
+    .bloc-inkpen {
+        display:none;
+        flex:0;
+    }
+
+    .pages{
+        width:100%;
+        flex:1;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+   .pages{
+       display:flex;
+       justify-content: space-between;
+       flex-wrap: wrap;
+       flex-grow: 1;
+   }
+
+    .leftpage{
+        flex-grow: 1;
+        order:2;
+    }
+
+    .rightpage{
+        flex-grow: 1;
+        order:1;
+    }
+
+
+    .bloc-glass{
+        display: none;
+    }
+
+    .bloc-inkpen {
+        display:none;
+    }
+
+    .container{
+        display:flex;
+        justify-content:stretch ;
+    }
+
+
+    .index-container{
+        flex-direction: column;
+        min-width:60px;
+        height: auto;
+        order:2;
+        flex-grow: 1;
+    }
+
+    .desktop {
+        flex-grow: 1;
+        order: 1;
+        padding: 0;
+    }
+
+}
